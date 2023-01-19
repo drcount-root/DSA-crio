@@ -1,17 +1,12 @@
-const str = 'hElLo suBHaM';
-
-const manipulate = str => {
-
-    const strArr = str.toLowerCase().split(" ");
-    // [ 'hello', 'subham' ]
-
-    let result = '';
-
-    for(let i=0; i < strArr.length; i++){
-        result += ' '+strArr[i][0].toUpperCase() + strArr[i].substr(1);
+const stringManipFunc = str => {
+    const arrStr = str.toLowerCase().split(' ');
+    // let result = '';
+    for (let i in arrStr) {
+      // result += arrStr[i][0].toUpperCase() + arrStr[i].substr(1) + ' ';
+      arrStr[i] = arrStr[i][0].toUpperCase() + arrStr[i].substr(1);
     }
-
-    return result;
-}
-
-console.log(manipulate(str));
+    // return result; // length => 13
+    return arrStr.join(' '); // length => 12
+  }
+  
+console.log(stringManipFunc('hELlo SubHaM'));
