@@ -1,3 +1,6 @@
+// Input: 'hElLo woRlD'
+// Output: 'Hello World'
+
 const stringManipFunc = str => {
     const arrStr = str.toLowerCase().split(' ');
     // let result = '';
