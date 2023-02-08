@@ -10,7 +10,7 @@ while true; do
     if [[ -z "$message" ]]; then
         echo "Message cannot be empty. Please enter some message."
     else
-        git commit -m $message
+        git commit -m "$message"
         git push -u origin main
         break
     fi
