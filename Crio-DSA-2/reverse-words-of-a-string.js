@@ -74,3 +74,6 @@ const reverseWords = function (str) {
 };
 
 console.log(reverseWords("    world  hello    "));
+
+// Time: O(n)
+// Space: O(1)
