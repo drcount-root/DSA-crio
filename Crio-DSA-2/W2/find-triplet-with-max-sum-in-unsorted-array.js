@@ -56,27 +56,27 @@ It is guaranteed that the sum of n over all test cases is less than 3000.
 
 
 function maxSumTriplet(n, nums) {
-    let maxSum = 0;
+    let ans = 0;
+
     for(let i = 1; i < n-1; i++){
-        let maxNumLeft = -1;
+        let max1 = 0;
+        let max2 = 0;
+        // find max val (less than nums[i])
+        // from 0 to i-1
         for(let j = 0; j < i; j++){
-            if(nums[j] < nums[i] && nums[j] > maxNumLeft){
-                maxNumLeft = nums[j];
-            }
+            if(nums[j] < nums[i]) max1 = Math.max(max1, nums[j]);
+        } 
+
+        // find max val (greater than nums[i])
+        for(let j = i + 1; j < n; j++){
+            if(nums[j] > nums[i]) max2 = Math.max(max2, nums[j]);
         }
 
-        let maxNumRight = -1;
-        for(let j = i - 1; j < n; j++){
-            if(nums[j] > nums[i] && nums[j] > maxNumRight){
-                maxNumRight = nums[j];
-            }
-        }
-
-        if(maxNumLeft != -1 && maxNumRight != -1){
-            maxSum = Math.max(maxSum, maxNumLeft + nums[i] + maxNumRight);
-        }
+        // store the max val
+        if(max1 && max2) ans = Math.max(ans, max1 + nums[i] + max2);
     }
-    return maxSum;
+
+    return ans;
 }
 
 console.log(maxSumTriplet(7, [3, 7, 4, 2, 5, 7, 5]));
