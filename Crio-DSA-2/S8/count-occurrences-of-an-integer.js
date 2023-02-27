@@ -31,3 +31,36 @@ Constraints
 -10^9 <= A[i] <= 10^9
 
 */
+
+const bSearch = (arr, l, r, x) => {
+  if (r < l) return -1;
+  let mid = l + parseInt((r - l) / 2);
+  if (arr[mid] == x) return mid;
+  if (arr[mid] > x) return bSearch(arr, l, mid - 1, x);
+  return bSearch(arr, mid + 1, r, x);
+};
+
+function countOccurrences(n, k, arr) {
+  {
+    let ind = bSearch(arr, 0, n - 1, k);
+    if (ind == -1) return 0;
+
+    let count = 1;
+    let left = ind - 1;
+
+    while (left >= 0 && arr[left] == k) {
+      count++;
+      left--;
+    }
+
+    let right = ind + 1;
+    while (right < n && arr[right] == k) {
+      count++;
+      right++;
+    }
+
+    return count;
+  }
+}
+
+console.log(countOccurrences(5, 2, [-1, 2, 2, 4, 7]));
