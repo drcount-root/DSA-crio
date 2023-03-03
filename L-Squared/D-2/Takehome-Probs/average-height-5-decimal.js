@@ -37,3 +37,7 @@ function averageHeight(n, arr) {
 }
 
 console.log(averageHeight(6, [2.2, 1, 3, 1.9, 2.4, 1.7]));
+// 2.03333
+
+console.log(averageHeight(3, [5.4, 7.2, 9.7]));
+// 7.43333
