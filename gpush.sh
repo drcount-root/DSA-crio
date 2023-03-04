@@ -18,7 +18,7 @@ done
 
 echo "OK! ✅"
 
-for i in 5 4 3 2 1; do
+for i in 3 2 1; do
     echo "Exiting in $i seconds..."
     sleep 1
 done
