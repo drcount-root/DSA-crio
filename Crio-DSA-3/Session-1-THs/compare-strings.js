@@ -67,5 +67,7 @@ function backspaceStringCompare(s, t) {
 }
 
 console.log(backspaceStringCompare("as#sddff#", "aa#sddf"));
+// true
 
 console.log(backspaceStringCompare("a##b", "ab"));
+// false
